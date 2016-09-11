@@ -19,7 +19,7 @@ define ( 'TAGS_PAGE', INDEX_PAGE . 'tags/' );
 define ( 'TEXTPAGE_PAGE', 'http://sketch.webshopapp.com/nl/service/mysketchpage/' );
 
 // the base url from where your website is visible in the browser
-define( 'BASE_URL', 'http://localhost:8888/seoshop-bikestore/' );
+define( 'BASE_URL', 'seoshop-bikestore.herokuapp.com/' );
 
 // you can leave the rest 'as is' when not changing the directory structure
 define( 'ASSET_URL', BASE_URL . 'assets/' );
