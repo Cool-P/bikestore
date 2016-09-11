@@ -1,0 +1,17 @@
+<footer>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="row">
+      <div class="col-md-4">
+        <a href="service">
+          About Us
+        </a>
+      </div>
+      <div class="col-md-4">
+        Copyright © 2016 Montreal Fixed.
+      </div>
+      <div class="col-md-4">
+        Store: Montreal Fixed. Located: 3543 Avenue Swail, Montreal.
+      </div>
+    </div>
+  </nav>
+  </footer>

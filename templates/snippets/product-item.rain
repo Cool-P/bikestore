@@ -1,0 +1,75 @@
+<div class="product">
+  <div class="product-wrapper">
+    <div class="product-shadow">
+      <div class="product-image">
+        <img src="{{ product.image | url_image('', product.fulltitle) }}" alt="{{ product.fulltitle }}"/>
+
+      </div>
+      <pre>
+      </pre>
+
+      <div class="product-body">
+        <div class="product-body-footer">
+          <div class="product-body-name">
+            {{product.fulltitle | limit(75)}}
+          </div>
+          
+
+          <div class="product-body-price">
+            <span class="money">
+              {{ shop.currency2.symbol }}{{ product.price.price }}
+            </span>
+          </div>
+          <div class="product-body-actions">
+            <a href="{{ product.url | url }}" class="btn btn-view">
+              view
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- <div class="image-wrap">
+    <a href="{{ product.url | url }}" title="{{ product.fulltitle }}">
+
+      {% if theme.product_image_fit %}
+        <img {% if theme.lazyload == "1" %} class="lazy" {% endif %} data-original="{{ product.image | url_image('214x234x2', product.fulltitle) }}" width="214" height="234" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}"/>
+      {% else %}
+        <img {% if theme.lazyload == "1" %} class="lazy" data-original {% else %} src{% endif %}="{{ product.image | url_image('214x234x1', product.fulltitle) }}" width="214" height="234" alt="{{ product.fulltitle }}" title="{{ product.fulltitle }}"/>
+      {% endif %}
+
+      <div class="description text-center">
+        <a href="{{ product.url | url }}" title="{{ product.fulltitle }}"></a>
+      </div>
+    </div>
+
+    <div class="info{% if shop.settings.legal.mode == 'strict' %} strict{% endif %}">
+      <a href="{{ product.url | url }}" title="{{ product.fulltitle }}" class="title">
+
+        <h3 class="no-underline">
+          {{ product.title }}</h3>
+      </a>
+      {% if product.price.price_old %}
+        <span class="old-price">{{ product.price.price_old | money }}</span>
+        <span class="new-price">
+          {{ product.price.price | money }}</span>
+      {% else %}
+        <span class="money">
+          {{ shop.currency2.symbol }}{{ product.price.price }}
+          {% if shop.settings.legal.mode == 'strict' %}
+            <span>*</span>
+          {% endif %}
+        </span>
+      {% endif %}
+    </a>
+
+    {% if shop.settings.legal.mode == 'strict' and product.unit %}
+      <small class="unit-price">{{ 'Unit price' | t }}:
+        {{ product.unit.price | money }}
+        /
+        {{ product.unit.unit }}
+      </small>
+    {% endif %}
+  </div> -->
+</div>

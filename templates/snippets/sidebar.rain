@@ -1,0 +1,97 @@
+<div class="sidebar-menu">
+
+  {% if template == 'pages/collection.rain' %}
+    <form action="{{ collection.internal.url | url }}" method="get" id="filter_form">
+      <input type="hidden" name="mode" value="{{ collection.filters.mode }}" id="filter_form_mode"/>
+      <input type="hidden" name="limit" value="{{ collection.filters.limit }}" id="filter_form_limit"/>
+      <input type="hidden" name="sort" value="{{ collection.filters.sort }}" id="filter_form_sort"/>
+      <input type="hidden" name="max" value="{{ collection.filters.max }}" id="filter_form_max"/>
+      <input type="hidden" name="min" value="{{ collection.filters.min }}" id="filter_form_min"/>
+
+      <div class="price-filter">
+        <div class="sidebar-filter-slider">
+          <div id="collection-filter-price"></div>
+        </div>
+        {# <div class="price-filter-range clear">
+          <div class="min">{{ 'Min' | t }}:
+            {{ shop.currency2.symbol }}
+            <span>{{ collection.filters.min }}</span>
+          </div>
+          <div class="max">{{ 'Max' | t }}:
+            {{ shop.currency2.symbol }}
+            <span>{{ collection.filters.max }}</span>
+          </div>
+        </div> #}
+      </div>
+
+      <select name="sort" onchange="$('#formSortModeLimit').submit();">
+        {% for sort in collection.sorts %}
+          <option value="{{ sort.id }}" {% if collection.filters.sort == sort.id %} selected="selected" {% endif %}>{{ sort.title }}</option>
+        {% endfor %}
+      </select>
+      {% if collection.brands %}
+        <select name="brand">
+          {% for brand in collection.brands %}
+            <option value="{{ brand.id }}" {% if brand.id == collection.filters.brand %} selected="selected" {% endif %}>{{ brand.title }}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      {% for filter in collection.filters.custom %}
+        <strong>{{ filter.title }}</strong>
+        {% for value in filter.values %}
+          <div class="sidebar-filter-item clearfix">
+            <input id="filter_{{ value.id }}" type="checkbox" name="filter[]" value="{{ value.id }}" {% if value.active %} checked="checked" {% endif %}/>
+            <label for="filter_{{ value.id }}">{{ value.title }}
+              {% if not value.active and value.has_count %}
+                <span>({{ value.count }})</span>
+              {% endif %}
+            </label>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </form>
+  {% endif %}
+
+  <div class="item cd-dropdown-wrapper">
+    <a class="cd-dropdown-trigger" href="#0">Menu</a>
+    <nav class="cd-dropdown">
+      <ul class="cd-dropdown-content">
+
+        {% for category in shop.categories %}
+          <li class="has-children">
+            <a href="{{ category.url | url }}" title="{{ category.title }}">
+              {{ category.title }}
+            </a>
+            <ul class="cd-secondary-dropdown is-hidden">
+
+              {% for category in category.subs %}
+                <li class="{% if category.subs %}has-children{% endif %}">
+                  <a href="{{ category.url | url }}" title="{{ category.title }}">
+                    {{ category.title }}
+                  </a>
+                  {% if category.subs %}
+                    <ul class="is-hidden">
+                      {% for category in category.subs %}
+                        <li class="subitem {% if category.subs %}has-children{% endif %}">
+                          <a href="{{ category.url | url }}" title="{{ category.title }}">
+                            {{ category.title }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+                <!-- has-children -->
+              {% endfor %}
+            </ul>
+            <!-- .cd-secondary-dropdown -->
+          </li>
+        {% endfor %}
+      </ul>
+      <!-- .cd-dropdown-content -->
+    </nav>
+    <!-- .cd-dropdown -->
+  </div>
+  <!-- .cd-dropdown-wrapper -->
+
+</div>

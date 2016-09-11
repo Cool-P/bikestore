@@ -1,0 +1,54 @@
+<form action="{{ ('cart/add/' ~ product.vid) | url }}" id="product_configure_form" method="post">
+  <div class="product-view-wrap">
+    <div class="product-view-centered">
+      <div class="header">
+        <div class="product-view-meta">
+          <div class="info">
+            <h3 class="title">
+              {{product.title}}
+            </h3>
+            <p class="description">
+              {{product.description}}
+            </p>
+
+            <span class="price">
+              {{shop.currency2.symbol}}{{product.price.price}}
+            </span>
+
+            <span class="shipping-info"></span>
+          </div>
+          <div class="variants">
+            {% if product.variants %}
+              <select onchange="window.location='?id='+this.value">
+                {% for variant in product.variants %}
+                    <option value="{{ variant.id }}"{% if product.vid == variant.id %} selected="selected"{% endif %}>{{ variant.title }} - {{ variant.price.price | money }}</option>
+                {% endfor %}
+              </select>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="product-view-image">
+        <div class="product-carousel" id="productCarousel">
+          {% for image in product.images %}
+            <div>
+              <img src="{{ image | url_image('', product.fulltitle) }}" alt="{{ product.fulltitle }}"/>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="actions">
+        {% if product.stock.available %}
+          <a href="javascript:;"
+            onclick="$('#product_configure_form').submit();"
+            class="btn glyphicon btn-buy glyphicon-shopping-cart"
+            title="{{ 'Add to cart' | t }}" {% if shop.language == 'de' %}style="padding: 0px 10px;"{% endif %}>
+            <span>{{ 'Add to cart' | t }}</span>
+          </a>
+        {% endif %}
+        <!-- <button class="btn btn-buy">Add to cart</button> -->
+      </div>
+    </div>
+  </div>
+</form>

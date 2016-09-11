@@ -1,0 +1,90 @@
+<!--
+
+* @package sketch
+* @author Willem Dumee
+* @version 0.1
+
+===================================================================
+  Lightspeed Theme Sketch by totalli t|m e-commerce
+  Visit http://www.totalli.nl for more themes and/or information on custom themes.
+===================================================================
+
+-->
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="{{ shop.language }}"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="{{ shop.language }}"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="{{ shop.language }}"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="{{ shop.language }}"> <!--<![endif]-->
+<head>
+
+    {% if theme.favicon %}
+        <link rel="shortcut icon" href="{{ 'favicon.png' | url_asset }}" type="image/png"/>
+        <link rel="apple-touch-icon" href="{{ 'touchicon.png' | url_asset }}">
+        <link rel="icon" href="{{ 'favicon.ico' | url_asset }}">
+        <!--[if IE]>
+        <link rel="shortcut icon" href="{{ 'favicon.ico' | url_asset }}"><![endif]-->
+        <meta name="msapplication-TileColor" content="{{ theme.tilecolor }}">
+        <meta name="msapplication-TileImage" content="{{ 'tileicon.png' | url_asset }}">
+    {% endif %}
+
+    <title>
+        {{ page.title }}
+        {% if theme.shop_name_divider %} {{ theme.shop_name_divider }}
+        {% endif %}
+        {{ shop.name }}
+    </title>
+    <meta name="keywords" content="{{ shop.keywords }}"/>
+    <meta name="description" content="{{ shop.description }}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="Stylesheet" href="{{ 'css/style.css' | url_asset }}" type="text/css"/>
+    <link rel="Stylesheet" href="{{ 'css/custom.css' | url_asset }}" type="text/css"/>
+    <link rel="Stylesheet" href="{{ 'css/bootstrap.css' | url_asset }}" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/g/jquery.slick@1.6.0(slick-theme.css+slick.css)">
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="assets/css/style-ie.css"/>
+    <![endif]-->
+</head>
+
+<body>
+{% include 'snippets/header.rain' %}
+<div class="content">
+  {% include template %}
+</div>
+
+{% include 'snippets/footer.rain' %}
+
+<script type="text/javascript" src="{{ 'js/modernizr.js' | url_asset }}"></script>
+<script type="text/javascript" src="{{ 'js/jquery-2-1-1.js' | url_asset }}"></script>
+<script type="text/javascript" src="{{ 'js/jquery-menu-aim.js' | url_asset }}"></script>
+<script type="text/javascript" src="{{ 'js/dropdown-menu.js' | url_asset }}"></script>
+<script type="text/javascript" src="{{ 'js/shop.js' | url_asset }}"></script>
+<script type="text/javascript" src="{{ 'js/main.js' | url_asset }}"></script>
+<script type="text/javascript" src="{{ 'js/product.js' | url_asset }}"></script>
+<script type="text/javascript" src="{{ 'js/bootstrap.min.js' | url_asset }}"></script>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="https://use.fontawesome.com/ca87eff410.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.min.js"></script>
+
+<script type="text/javascript">
+  // grab an element
+  var myElement = document.querySelector("header");
+  // construct an instance of Headroom, passing the element
+  var headroom  = new Headroom(myElement);
+  // initialise
+  headroom.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.btn {
+  padding: rem(5);
+  text-transform: uppercase;
+  outline: none;
+  font-weight: 600;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-buy {
+  padding: rem(30);
+  background: black;
+  color: white;
+  display: block;
+  @include size(100% auto);
+  @include shadow(1);
+  @include transition(box-shadow 0.2s ease-in-out);
+  &:hover {color: white;}
+  &:hover {
+    @include shadow(2);
+  }
+  &:focus {
+    @include shadow(1);
+  }
+}

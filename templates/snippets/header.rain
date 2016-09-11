@@ -1,0 +1,62 @@
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <a href="{{ '' | url }}" >
+      <img src="{{ 'logo.png' | url_asset }}" alt="logo" class="nav-logo"/>
+    </a>
+
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ 'shop' | url }}" class="nav-shop">
+          Shop
+        </a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <form action="{{ 'search' | url }}" method="get" id="formSearch" class="navbar-form navbar-left">
+          <div class="input-group">
+            <input type="text" name="q" autocomplete="off" placeholder="Search: Bikes, Parts, Tools"
+                   value="{{ page.search }}" class="form-control" >
+          </div>
+          <!--<span onclick="$('#formSearch').submit();" title="{{ 'Search' | t }}" class="glyphicon glyphicon-search"></span>-->
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="item">
+            <a href="{{ 'cart' | url }}" class="cartview" title="{{ 'Cart' | t }}" class="cart">
+              {{ page.cart.products | length }}
+              {{ 'Items' | t }}
+              -
+              {{ page.cart.total.price | money }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+  </nav>
+</header>
+
+
+<div class="social-media">
+  <ul class="social-icons">
+    <li>
+      <a href="#">
+        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>

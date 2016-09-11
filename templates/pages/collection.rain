@@ -1,0 +1,43 @@
+<main class="cd-main-content collection_page">
+
+  <section class="sidebar_section">
+    {% include 'snippets/sidebar.rain' %}
+  </section>
+  <section class="cd-gallery collection_section">
+    <div class="breadcrumbs">
+      <a href="{{ '' | url }}" title="{{ 'Home' | t }}">{{ 'Home' | t }}</a>
+      {% for breadcrumb in page.breadcrumbs %}
+        »
+        <a href="{{ breadcrumb.url | url }}" title="{{ breadcrumb.title }}">
+          {% if loop.last %}
+            <strong>
+            {% endif %}{{ breadcrumb.title }}
+            {% if loop.last %}
+            </strong>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="products">
+      {% for product in collection.products %}
+        {% include 'snippets/product-item.rain' %}
+      {% endfor %}
+      {% if not collection.products %}
+        <div class="no-products-found">{{ 'No products found' | t }}...</div>
+      {% endif %}
+
+      {% if shop.settings.legal.mode == 'strict' %}
+        <div class="right col-md-3">
+          <small>
+            *
+            {% if shop.b2b %}{{ 'Excl. VAT' | t }}
+            {% else %}{{ 'Incl. VAT' | t }}{% endif %}
+            {{ 'Excl. $1' | t('<a href="' ~ 'service/shipping-returns' | url ~ '" target="_blank">' ~ 'Shipping costs' | t ~ '</a>') | raw }}
+          </small>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  </main>

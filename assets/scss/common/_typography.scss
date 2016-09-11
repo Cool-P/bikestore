@@ -1,0 +1,51 @@
+$monts: 'Montserrat', sans-serif;
+$base-font: $monts, "Helvetica Neue", Helvetica, Arial, sans-serif;;
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: rem(10);
+  margin-bottom: 0;
+  line-height: 2;
+}
+h1, .alpha {
+  font-size: rem(42);
+  @include MQ(M) {
+    font-size: rem(61);
+  }
+}
+h2, .beta {
+  font-size: rem(35);
+  @include MQ(M) {
+    font-size: rem(51);
+  }
+}
+h3, .gamma {
+  font-size: rem(31);
+  @include MQ(M) {
+    font-size: rem(41);
+  }
+}
+h4, .delta {
+  font-size: rem(18);
+  @include MQ(M) {
+    font-size: rem(21);
+  }
+}
+h5, .epsilon {
+  font-size: rem(18);
+}
+h6, .zeta {
+  font-size: rem(16);
+}
+p {
+  font-size: rem(14);
+}
+
+@mixin text-dark {
+  color: #333333;
+  color: rgba(51, 51, 51, 0.6);
+}
+
+@mixin text-mute {
+  color: white;
+  color: rgba(250,250,250,0.6);
+}

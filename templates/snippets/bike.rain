@@ -1,0 +1,11 @@
+<div class="bike-module">
+  <div class="about">
+    <p class="about-statement">
+      {{'Chain Guide is an online Bike shop based in Montreal. We want to push Canadians to buy the best parts and bikes.' | t }}
+    </p>
+    <a href="service" class="about-link">
+      About Us
+    </a>
+  </div>
+  <!-- <img src="{{ 'bike.jpg' | url_asset }}" alt="bike" /> -->
+</div>

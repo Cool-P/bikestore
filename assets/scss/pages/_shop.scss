@@ -1,0 +1,111 @@
+.collection_page {
+    @include clearfix();
+    .breadcrumbs {
+        padding: 0 $global-container-padding 0 $global-container-padding;
+        @include animation-delay(0.6s);
+    }
+}
+.collection_section {
+    @include column(1);
+    padding-top: 0px;
+}
+$product-image-height: 60%;
+$product-body-height: 100% - $product-image-height;
+.products {
+    @include clearfix();
+    margin: 0 auto;
+    display: block;
+    max-width: $L;
+    .product {
+        @include column(1);
+        @include aspect-ratio(9, 9);
+        @include MQ(S) {
+             @include column(0.5);
+        }
+        // @include MQ(M) {
+        //      @include column(0.33);
+        // }
+        // @include MQ(L) {
+        //      @include column(0.25);
+        // }
+
+    }
+    .product-wrapper {
+        @include position(absolute, 0 auto auto 0);
+        @include size(100% 100%);
+        padding: rem(30);
+        &:hover {
+            .product-shadow {
+
+            }
+        }
+    }
+    .product-image {
+        position: relative;
+        @include size(100% $product-image-height);
+        // @include shadow(1);
+        background: white;
+        img {
+            max-width: 70%;
+            @include position(absolute, 50% auto auto 50%);
+            @include transform(translateY(-50%) translateX(-50%));
+        }
+    }
+    .product-body {
+        position: relative;
+        @include size(100% $product-body-height);
+        background: white;
+        border-top: 1px solid whitesmoke;
+        padding: rem(30);
+        .product-body-name {
+            font-size: modular-scale(-1);
+            line-height: 1.4;
+            text-align: center;
+            @include MQ(M) {
+            }
+        }
+        .product-body-footer {
+            @include size(100% auto);
+            @include position(absolute, 100% auto auto 50%);
+            @include transform(translateY(-100%) translateX(-50%));
+            padding: rem(30);
+            .btn.btn-view {
+                float: right;
+                font-size: modular-scale(-1);
+                @include size(100% auto);
+                margin-top: 3px;
+                background: none;
+                font-size: modular-scale(-2);
+                text-align: center;
+                background: black;
+                color: white;
+                @include transition(background 0.2s ease-out);
+                &:hover {
+                  @include shadow(1);
+                }
+                @include MQ(S) {
+                  font-size: modular-scale(0);
+                }
+            }
+        }
+        .product-body-price {
+          display: block;
+          text-align: center;
+          font-weight: 600;
+          font-size: 11px;
+          margin: 5px auto;
+        }
+    }
+    .product-shadow {
+        @include size(100% 100%);
+
+    }
+}
+
+
+.collection_page .breadcrumbs {
+  display: block;
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 0;
+}

@@ -1,0 +1,39 @@
+
+<div class="container service">
+    {% include'snippets/sidebar.rain' %}
+    <div class="aboutus "><h1><b>Services</b></h1>{{ textpage.content | raw }}</div>
+    <div class="row">
+        <div class="contact col-md-6">
+            <h1><b>Contact Us</b></h1>
+            <form>
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="form-control" rows="8" placeholder="Message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h1><b>Our Address</b></h1>
+            <address>
+                <span class="glyphicon glyphicon-map-marker"></span> <abbr title="address">Address:</abbr> 3543 Swail Montreal QC H3T 1P5<br>
+                <span class="glyphicon glyphicon-envelope"></span> <abbr title="Phone">Email:</abbr> xyz@123.com<br>
+                <span class="glyphicon glyphicon-earphone"></span> <abbr title="Phone">Tel:</abbr> (123) 456-7890
+
+            </address>
+            <div id="map">
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMmpk1n2R902jqAowSnp7t868iy1dUxyE&amp;sensor=false"></script>
+            </div>
+
+        </div>
+    </div>
+</div>

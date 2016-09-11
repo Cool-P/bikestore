@@ -1,0 +1,20 @@
+<div class="landing row">
+    <div class="col-md-6 landing-left">
+        <img src="{{ 'logo.png' | url_asset }}" class="landing-logo" />
+        <div class="landing-text">
+            Chain Guide is the canadian reference when it comes to shopping<br> bikes, accessories, parts and tools online.
+        </div>
+        <div class="landing-link">
+            <span class="landing-firstlink">Link 1</span>
+        </div>
+    </div>
+    <div class="col-md-6 landing-right">
+        <img src="{{ 'logo.png' | url_asset }}" class="landing-logo"/>
+        <div class="landing-text">
+            Montreal Physical Location
+        </div>
+        <div class="landing-link">
+            <a href="http://www.chainguide.ca/mtlfixed-services">Link 2</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.sidebar_section {
+  @include column(1);
+  height: 100%;
+  display: block;
+  position: relative;
+  .sidebar-menu {
+    @include size(90% 100%);
+    margin: 90px auto 0px auto;
+    max-width: $L;
+  }
+  #filter_form {
+    float: right;
+  }
+}

@@ -1,0 +1,20 @@
+footer {
+  margin-bottom: 80px;
+  font-weight: 400;
+  @include clearfix();
+  padding: rem(50) rem(0) rem(50) rem(0);
+  position: relative;
+  ul.menu-left {
+    float: left;
+  }
+  ul.menu-right {
+    float: right;
+    font-size: modular-scale(-1);
+  }
+
+  .copyright {
+    @include position(absolute, 50% auto auto 50%);
+    @include transform(translateY(-50%) translateX(-50%));
+    font-size: modular-scale(-1);
+  }
+}

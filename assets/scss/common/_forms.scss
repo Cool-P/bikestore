@@ -1,0 +1,17 @@
+.dropdown-field {
+
+}
+
+.input-field {
+  width: 170px;
+  height: 20px;
+  background: none;
+  border: 2px solid white;
+  outline: none;
+  padding: 10px;
+  line-height: 2;
+  color: white;
+  @include placeholder {
+    color: white;
+  };
+}
